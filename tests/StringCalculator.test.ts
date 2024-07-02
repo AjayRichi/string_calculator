@@ -8,6 +8,10 @@ test("returns number itself for a single number input", () => {
     expect(Add("1")).toBe(1)
 })
 
-test("returns sum of the two comma-separated numbers", () => {
+test("returns sum of two comma-separated numbers", () => {
     expect(Add("1,2")).toBe(3)
+})
+
+test("returns sum of multiple comma-separated numbers", () => {
+    expect(Add("1,2,3")).toBe(6)
 })
