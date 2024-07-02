@@ -11,6 +11,11 @@ export function Add(numbers: string): number {
         if (negative_numbers.length > 0) {
             throw new Error(`negative numbers not allowed ${negative_numbers.join(", ")}.`)
         }
-        return numbers.split(delimiter).reduce((acc, current) => (acc + parseInt(current)), 0)
+        return numbers
+            .split(delimiter)
+            .reduce((acc, current) => {
+                const currentNum = parseInt(current)
+                return currentNum > 1000 ? acc : acc + currentNum
+            }, 0)
     }
 }
