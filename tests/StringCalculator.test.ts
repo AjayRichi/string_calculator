@@ -15,3 +15,11 @@ test("returns sum of two comma-separated numbers", () => {
 test("returns sum of multiple comma-separated numbers", () => {
     expect(Add("1,2,3")).toBe(6)
 })
+
+test("handles new line character between numbers", () => {
+    expect(Add("1\n2,3")).toBe(6)
+})
+
+test("handles different delimiters", () => {
+    expect(Add("//;\n1;2")).toBe(3)
+})
